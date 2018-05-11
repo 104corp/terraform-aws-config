@@ -1,4 +1,10 @@
 // variable for main.auto.tf
+variable "md5" {
+  description = "for md5"
+  type        = "string"
+  default     = "104corp"
+}
+
 variable "profile" {
   description = "aws login profile"
   default     = ""
@@ -17,6 +23,7 @@ variable "region" {
 variable "config_logs_bucket" {
   description = "The S3 bucket for AWS Config logs."
   type        = "string"
+  default     = ""
 }
 
 variable "config_logs_prefix" {
