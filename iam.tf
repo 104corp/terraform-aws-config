@@ -8,7 +8,6 @@ data "template_file" "aws_config_policy" {
 
   vars = {
     config_logs_bucket = "${var.config_logs_bucket}"
-    md5                = "${var.md5}"
     config_logs_prefix = "${var.config_logs_prefix}"
     account_id         = "${data.aws_caller_identity.current.account_id}"
   }
