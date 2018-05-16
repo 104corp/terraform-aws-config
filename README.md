@@ -1,47 +1,70 @@
-terraform-aws-config
+Terraform-aws-config
 ======================
 Rule List & Description
 --------------------------
 The rules are divide into 3 group
 ### Compute
-   - restricted-ssh
+   1. restricted-ssh
      - Checks whether security groups in use do not allow restricted incoming SSH traffic.
-   - restricted-common-ports
+   2. restricted-common-ports
      - Checks whether security groups in use  do not allow restricted incoming TCP traffic to the specified ports.
-   - ec2-volume-inuse-check
+   3. ec2-volume-inuse-check
      - Checks whether EBS volumes are attached to EC2 instances
-   - instances-in-vpc
+   4. instances-in-vpc
      - Ensure all EC2 instances run in a VPC
-   - eip-attached
+   5. eip-attached
      - Checks whether all Elastic IP addresses that are allocated to a VPC are attached to EC2 instances or in-use elastic network interfaces (ENIs).
  ### Manage Tools
-   - cloudtrail-enabled
+   1. cloudtrail-enabled
      - Ensure CloudTrail is enabled
-   - require-tags
+   2. require-tags
      - Checks whether your resources have the tags that you specify. For example, you can check whether your EC2 instances have the 'CostCenter' tag. Separate multiple values with commas.
  ### Security, Identity & Compliance
-   - iam-user-no-policies-check
+   1. iam-user-no-policies-check
      - Ensure that none of your IAM users have policies attached. IAM users must inherit permissions from IAM groups or roles.
-   - iam-password-policy
+   2. iam-password-policy
      - Ensure the account password policy for IAM users meets the specified requirements
-   - acm-certificate-expiration-check
+   3. acm-certificate-expiration-check
      - Ensures ACM Certificates in your account are marked for expiration within the specified number of days
-   - root-account-mfa-enabled
+   4. root-account-mfa-enabled
      - Ensure root AWS account has MFA enabled
 
 User Guide
 ----------
 ### Prerequirement
    - Install AWS CLI
-      - [Installing the AWS Command Line Interface] (https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
+      - [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
    - Install Terraform
-     - [Download Terraform] (https://www.terraform.io/downloads.html)
-### 
+     - [Download Terraform](https://www.terraform.io/downloads.html)
+### Adjust the main.auto.tfvars
+``` main.auto.tfvars
+// AWS INFO (Insert your AWS INFO)
+profile = ""                -> insert the aws profile name
+assume_role = ""            -> insert the assume role' arn
+region = ""                 -> insert the region
+config_logs_bucket = ""     -> insert the bucket name you want
+// restricted_common_ports  (Classified the port number, example as below)
+blockedPort1 = "20"
+blockedPort2 = "21"
+blockedPort3 = "3389"
+blockedPort4 = "3306"
+blockedPort5 = "4433"
+// require-tags             (Classified the key for your resource,example as below)
+tag1Key = "Project-Name"
+tag2Key = "Server-Name"
+tag3Key = "Owner"
+```
+### Quick Start
+``` initial
+terraform init
+terraform plan
+terraform apply
+``` 
 
 Reference Link
 --------------
  Further rules for reference
  - AWS Managed Config Rules
-     - [managed-rules-by-aws-config] (https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html)
+     - [managed-rules-by-aws-config](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html)
  - AWS Config Rule Repository
-     - [awslabs] (https://github.com/awslabs/aws-config-rules)
+     - [awslabs](https://github.com/awslabs/aws-config-rules)
