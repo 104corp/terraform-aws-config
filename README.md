@@ -33,15 +33,15 @@ User Guide
 ----------
 ### Prerequirement
    - Install AWS CLI
-    - [Installing the AWS Command Line Interface] (https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
+      - [Installing the AWS Command Line Interface] (https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
    - Install Terraform
-    - [Download Terraform] (https://www.terraform.io/downloads.html)
+     - [Download Terraform] (https://www.terraform.io/downloads.html)
 ### 
 
 Reference Link
 --------------
  Further rules for reference
  - AWS Managed Config Rules
-    - [managed-rules-by-aws-config] (https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html)
+     - [managed-rules-by-aws-config] (https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html)
  - AWS Config Rule Repository
-    - [awslabs] (https://github.com/awslabs/aws-config-rules)
+     - [awslabs] (https://github.com/awslabs/aws-config-rules)
