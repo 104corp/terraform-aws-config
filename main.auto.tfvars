@@ -1,8 +1,8 @@
 // AWS INFO (Insert your AWS INFO)
-profile = "104awsadmin"
-assume_role = "arn:aws:iam::214310575279:role/Role-Administrator"
-region = "ap-northeast-1"
-config_logs_bucket = "104isgd-config-test"
+profile = ""
+assume_role = ""
+region = ""
+config_logs_bucket = ""
 // restricted_common_ports (Classified the port number)
 blockedPort1 = "20"
 blockedPort2 = "21"
