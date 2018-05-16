@@ -32,9 +32,9 @@ The rules are divide into 3 group
 User Guide
 ----------
 ### Prerequirement
-   - Install AWS CLI
+1. Install AWS CLI
       - [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
-   - Install Terraform
+2. Install Terraform
      - [Download Terraform](https://www.terraform.io/downloads.html)
 ### Adjust the main.auto.tfvars
 ``` main.auto.tfvars
@@ -54,7 +54,7 @@ tag1Key = "Project-Name"
 tag2Key = "Server-Name"
 tag3Key = "Owner"
 ```
-### Quick Start
+### Getting Started
 ``` initial
 terraform init
 terraform plan
@@ -63,8 +63,8 @@ terraform apply
 
 Reference Link
 --------------
- Further rules for reference
- - AWS Managed Config Rules
+Further rules for reference
+- AWS Managed Config Rules
      - [managed-rules-by-aws-config](https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html)
- - AWS Config Rule Repository
+- AWS Config Rule Repository
      - [awslabs](https://github.com/awslabs/aws-config-rules)
