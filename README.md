@@ -1,3 +1,5 @@
+<img src="https://cdn.rawgit.com/hashicorp/terraform-website/master/content/source/assets/images/logo-hashicorp.svg" width="600px">
+
 Terraform-aws-config
 ======================
 Rule List & Description
@@ -31,7 +33,7 @@ The rules are divide into 3 group
 
 User Guide
 ----------
-### Prerequirement
+### Requirements
 1. Install AWS CLI
       - [Installing the AWS Command Line Interface](https://docs.aws.amazon.com/zh_tw/cli/latest/userguide/installing.html)
 2. Install Terraform
